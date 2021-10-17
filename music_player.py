@@ -26,3 +26,16 @@ def save_new_playlist(playlist_name):
     with open('playlists.txt', 'a') as file:
         file.write(playlist_name + '\n')
     main()
+
+# writes playlist tracks to a file, saving it for future use
+def save_playlist(playlist, playlist_name, new_playlist):
+    print(f'[{playlist_name}] has been saved with {len(playlist)} tracks\n')
+
+    with open(playlist_name + '.txt', 'w') as file:
+        for song in playlist:
+            file.write(f'{song}\n')
+    
+    if new_playlist:
+        save_new_playlist(playlist_name)
+    main() 
+    
