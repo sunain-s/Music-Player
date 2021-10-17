@@ -10,3 +10,13 @@ def song_list():
         for line in file:
             songs.append(line.rstrip('\n'))
     return songs
+
+# lets the user view the song options
+def view_song_list(songs):
+    i = 1
+    print('\n')
+    for song in songs:
+        print(f'{i} - {song}')
+        i += 1
+    print('\n')
+    main()
