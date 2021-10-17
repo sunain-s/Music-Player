@@ -20,3 +20,9 @@ def view_song_list(songs):
         i += 1
     print('\n')
     main()
+    
+# saves new playlist to 'playlists.txt'
+def save_new_playlist(playlist_name):
+    with open('playlists.txt', 'a') as file:
+        file.write(playlist_name + '\n')
+    main()
