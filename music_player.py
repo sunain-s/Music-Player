@@ -72,3 +72,15 @@ def add_song(playlist_name, songs, playlist, new_playlist):
         # input validification check
         elif not action.isdigit() or int(action) > len(songs):
             print('Invalid input, enter the corresponding number for the song you would like to add')
+        # checks if song is already in playlist
+        elif songs[int(action) - 1] in playlist:
+            print(f'{songs[int(action) - 1]} is already in [{playlist_name}] please select another song')
+        else:
+            playlist.append(songs[int(action) - 1])
+        
+        print(f'{playlist_name}:\n')
+        # outputs tracks and track position
+        i = 1
+        for song in playlist:
+            print(f'{i} - {song}')
+            i += 1
