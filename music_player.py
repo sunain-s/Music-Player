@@ -39,3 +39,13 @@ def save_playlist(playlist, playlist_name, new_playlist):
         save_new_playlist(playlist_name)
     main() 
     
+# removes a song from a given playlist
+def remove_song(playlist, playlist_name):
+    save = False
+    while not save:
+        print(f'Enter the corresponding number for which song you want to remove from [{playlist_name}]\n')
+        # outputs tracks and track position
+        i = 1
+        for track in playlist:
+            print(f'{i} - {track}')
+            i += 1
