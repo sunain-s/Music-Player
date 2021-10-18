@@ -58,3 +58,17 @@ def remove_song(playlist, playlist_name):
         else:
             playlist.remove(playlist[int(action) - 1])
             
+# adds a song to a given playlist
+def add_song(playlist_name, songs, playlist, new_playlist):
+    save = False
+    print(f'Enter the corresponding number for which song you want to add to [{playlist_name}]\n')
+    for song in songs:
+        print(f'{songs.index(song) + 1} - {song}')
+
+    while not save:
+        action = input('\nEnter song number or "save" to save the playlist and return to menu:  ')
+        if action == 'save':
+            save_playlist(playlist, playlist_name, new_playlist)
+        # input validification check
+        elif not action.isdigit() or int(action) > len(songs):
+            print('Invalid input, enter the corresponding number for the song you would like to add')
