@@ -84,3 +84,17 @@ def add_song(playlist_name, songs, playlist, new_playlist):
         for song in playlist:
             print(f'{i} - {song}')
             i += 1
+
+# allows user to change playlist track order
+def move_song(playlist, playlist_name):
+    save = False
+    while not save:
+        print('\n')
+        # outputs tracks and track position
+        i = 1
+        for track in playlist:
+            print(f'{i} - {track}')
+            i += 1
+        action = input(f'Enter the corresponding number for which song you would like to move, or "save" to save the playlist and return to menu:  ')
+        if action == 'save':
+            save_playlist(playlist, playlist_name, new_playlist=False)         
