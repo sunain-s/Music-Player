@@ -98,3 +98,16 @@ def move_song(playlist, playlist_name):
         action = input(f'Enter the corresponding number for which song you would like to move, or "save" to save the playlist and return to menu:  ')
         if action == 'save':
             save_playlist(playlist, playlist_name, new_playlist=False)         
+        # input validification check
+        if not action.isdigit() or int(action) > len(playlist):
+            print(f'Invalid input, please enter the corresponding number for the song you would like to move.')
+        else:
+            song = playlist[int(action) - 1]
+            new_pos = input(f'Which position would you like to move {song} to?:  ')
+            # input validification check
+            if not new_pos.isdigit() or int(new_pos) > len(playlist):
+                print(f'Invalid input, please enter the corresponding number for the position you would like to move {song} to.')
+            else:
+                # moves song to new position
+                playlist.remove(playlist[int(action) - 1])
+                playlist.insert(int(new_pos) - 1, song)
