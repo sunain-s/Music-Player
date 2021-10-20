@@ -132,3 +132,10 @@ def rename_playlist(playlist_name):
     # updates playlists.txt
     with open('playlists.txt', 'r') as file:
         lines = file.readlines()    
+    with open('playlists.txt', 'w') as file:
+        for line in lines:
+            line = line.rstrip('\n')
+            if line == playlist_name:
+                file.write(new_name)
+    print(f'Playlist [{playlist_name}] renamed to [{new_name}]')
+    main()
