@@ -111,3 +111,16 @@ def move_song(playlist, playlist_name):
                 # moves song to new position
                 playlist.remove(playlist[int(action) - 1])
                 playlist.insert(int(new_pos) - 1, song)
+
+# shuffles playlist into a random order
+def shuffle_playlist(playlist, playlist_name):
+    # randomises list
+    random.shuffle(playlist)
+    print('\n')
+    # outputs tracks and track position
+    i = 1
+    for song in playlist:
+        print(f'{i} - {song}')
+        i += 1
+    print('\n')
+    save_playlist(playlist, playlist_name, new_playlist=False)                
