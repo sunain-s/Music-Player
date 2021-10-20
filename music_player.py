@@ -124,3 +124,11 @@ def shuffle_playlist(playlist, playlist_name):
         i += 1
     print('\n')
     save_playlist(playlist, playlist_name, new_playlist=False)                
+
+# changes playlist name
+def rename_playlist(playlist_name):
+    new_name = input('\nNew Playlist Name:  ')
+    os.rename(playlist_name + '.txt', new_name + '.txt')
+    # updates playlists.txt
+    with open('playlists.txt', 'r') as file:
+        lines = file.readlines()    
