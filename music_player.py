@@ -139,3 +139,19 @@ def rename_playlist(playlist_name):
                 file.write(new_name)
     print(f'Playlist [{playlist_name}] renamed to [{new_name}]')
     main()
+
+# choice function for edit options
+def edit_playlist_choices(playlist_name, songs, playlist):
+    print(f'\nEnter "a" to add a song, "r" to remove a song, "s" to shuffle the playlist, "m" to edit the track order, "n" to rename the playlist, "d" to delete the playlist permanently or "exit" to return to the menu')
+    action = input('Enter corresponding letter:  ')
+    
+    # possible valid inputs, calls appropriate functions
+    if action == 'exit':
+        main()
+    elif action == 'a':
+        add_song(playlist_name, songs, playlist, new_playlist=False)
+    elif action == 'r':
+        remove_song(playlist, playlist_name)
+    elif action == 's':
+        shuffle_playlist(playlist, playlist_name)
+       
