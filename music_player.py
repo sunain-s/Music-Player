@@ -173,3 +173,15 @@ def playlist_tracks(playlist_num, songs):
 
     playlist = []
     print(f'\nPlaylist - [{playlist_name}]:\n\n')        
+    
+    # opens playlist file, adds track to playlist list + display tracks
+    with open(playlist_name + '.txt', 'r') as file:
+        i = 1
+        for song in file:
+            song = song.rstrip('\n')
+            print(f'{i} - {song}')
+            playlist.append(song)
+            i += 1
+    edit_playlist_choices(playlist_name, songs, playlist)
+    
+   
