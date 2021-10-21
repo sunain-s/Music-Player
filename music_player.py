@@ -154,4 +154,12 @@ def edit_playlist_choices(playlist_name, songs, playlist):
         remove_song(playlist, playlist_name)
     elif action == 's':
         shuffle_playlist(playlist, playlist_name)
-       
+    elif action == 'm':
+        move_song(playlist, playlist_name)
+    elif action == 'n':
+        rename_playlist(playlist_name)
+    elif action == 'd':
+        delete_playlist(playlist_name)
+    else:
+        print('Invalid input, please enter one of the assigned letters for the action you wish to complete.')
+        edit_playlist_choices(playlist_name, songs, playlist)
