@@ -163,3 +163,13 @@ def edit_playlist_choices(playlist_name, songs, playlist):
     else:
         print('Invalid input, please enter one of the assigned letters for the action you wish to complete.')
         edit_playlist_choices(playlist_name, songs, playlist)
+
+# displays the songs in a given playlist
+def playlist_tracks(playlist_num, songs):
+    # finds playlist name in 'playlists.txt' using index
+    with open('playlists.txt', 'r') as file:
+        lines = file.readlines()
+        playlist_name = lines[playlist_num - 1].rstrip('\n')
+
+    playlist = []
+    print(f'\nPlaylist - [{playlist_name}]:\n\n')        
