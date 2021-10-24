@@ -184,4 +184,16 @@ def playlist_tracks(playlist_num, songs):
             i += 1
     edit_playlist_choices(playlist_name, songs, playlist)
     
-   
+# creates a new playlist and file for the playlist
+def create_playlist(songs):
+    playlist_name = input('\nPlaylist Name:  ')
+    # checks if playlist name is already taken and loops
+    with open('playlists.txt', 'r') as playlists:
+        for line in playlists:
+            line = line.rstrip('\n')
+            if playlist_name == line:
+                print(f'[{playlist_name}] already exists. Please enter a different name.')
+                create_playlist(songs)
+    # creates new file if playlist doesn't already exist, calls add song function
+    file = open(playlist_name + '.txt', 'a')
+    add_song(playlist_name, songs, playlist=[], new_playlist=True)   
