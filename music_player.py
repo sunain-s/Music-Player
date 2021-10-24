@@ -197,3 +197,13 @@ def create_playlist(songs):
     # creates new file if playlist doesn't already exist, calls add song function
     file = open(playlist_name + '.txt', 'a')
     add_song(playlist_name, songs, playlist=[], new_playlist=True)   
+
+# lets the user view all saved playlists then opt to view a specific playlist
+def view_playlists(songs):
+    # displays playlists
+    i = 0
+    with open('playlists.txt', 'r') as file:
+        for playlist in file:
+            i += 1
+            playlist = playlist.rstrip('\n')
+            print(f'{i} - [{playlist}]')    
