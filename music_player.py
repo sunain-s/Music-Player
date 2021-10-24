@@ -207,3 +207,14 @@ def view_playlists(songs):
             i += 1
             playlist = playlist.rstrip('\n')
             print(f'{i} - [{playlist}]')    
+    
+    action = input('\nEnter the corresponding number for which playlist you would like to view, or enter "menu" to return to menu:  ')
+    if action == 'menu':
+        main()
+    # input validification check
+    elif not action.isdigit() or i < int(action):
+        print('Invalid input, please enter the assigned number for the playlist you wish to view')
+        view_playlists(songs)
+    else:
+        playlist_tracks(int(action), songs)
+        
