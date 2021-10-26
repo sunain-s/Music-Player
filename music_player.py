@@ -229,3 +229,9 @@ def main():
             sys.exit()
         if user_action == 'p':
             view_playlists(songs)
+        if user_action == 'c':
+            create_playlist(songs)
+        if user_action == 's':
+            view_song_list(songs)
+        else:
+            print('Invalid input, please enter one of the assigned letters for the action you wish to complete.')
