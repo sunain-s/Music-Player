@@ -218,3 +218,14 @@ def view_playlists(songs):
     else:
         playlist_tracks(int(action), songs)
         
+# master function - runs when .py is run
+def main():
+    songs = song_list()
+    while True:
+        user_action = input('\nPick an action:\n\nClose Music Player - e\nView And Edit Playlists - p\nCreate New Playlist - c\nView Song List - s\n\nEnter corresponding letter:  ')
+
+        # loops if invalid input, else calls appropriate function
+        if user_action == 'e':
+            sys.exit()
+        if user_action == 'p':
+            view_playlists(songs)
