@@ -235,3 +235,7 @@ def main():
             view_song_list(songs)
         else:
             print('Invalid input, please enter one of the assigned letters for the action you wish to complete.')
+
+# runs program
+if __name__ == '__main__':
+    main()            
