@@ -16,7 +16,7 @@ CLI Music Player using Python3
 
 # How To Run
 
-Coming Soon
+Run 'music_player.py' the follow instructions in CLI, to use program as desired
 
 # What I Learnt
 
@@ -29,3 +29,9 @@ Coming Soon
 - better code organisation through functions
 
 # Improvements
+
+- Adding a GUI
+  - Spotify like viewing
+  - Interactive features
+- Playing music
+- Skip and Pause features (for playing music)
