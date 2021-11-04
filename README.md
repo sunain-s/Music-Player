@@ -16,7 +16,7 @@ CLI Music Player using Python3
 
 # How To Run
 
-Run 'music_player.py' the follow instructions in CLI, to use program as desired
+Run 'music_player.py' then follow instructions in CLI, to use program as desired
 
 # What I Learnt
 
