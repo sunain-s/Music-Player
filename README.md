@@ -15,7 +15,7 @@ CLI Music Player using Python3
 - User must be able to delete the playlist
 
 # How To Run
-
+**Requires Python3 installed** - developed on Python 3.9
 Run 'music_player.py' then follow instructions in CLI, to use program as desired
 
 # What I Learnt
